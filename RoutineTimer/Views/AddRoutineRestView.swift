@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct AddRoutineRestView: View {
+    @Binding var input: String
+    var onSave: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("When is your")
+                        .font(.system(size: 28, weight: .semibold, design: .default))
+                    Text("rest day")
+                        .font(.system(size: 28, weight: .semibold, design: .default))
+                }
+                .padding(.leading, 28)
+                Spacer()
+            }
+            
+            NavigationLink(destination: MainView()) {
+                ConfirmTextButton(title: "Save")
+            }
+            .padding()
+        }
     }
 }
 
 #Preview {
-    AddRoutineRestView()
+    AddRoutineRestView(input: .constant("hi"), onSave: {print("save here")})
 }

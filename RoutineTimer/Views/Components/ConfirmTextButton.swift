@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ConfirmButtonTextView: View {
+struct ConfirmTextButton: View {
     var title: String
     
     var body: some View {
@@ -32,5 +32,5 @@ struct ConfirmButtonTextView: View {
 }
 
 #Preview {
-    ConfirmButtonTextView(title: "Title")
+    ConfirmTextButton(title: "Title")
 }

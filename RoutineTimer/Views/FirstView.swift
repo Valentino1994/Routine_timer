@@ -38,11 +38,12 @@ struct FirstView: View {
                     }
                     .padding(.leading, 28)
                     .padding(.bottom, 30)
+                    
                     Spacer()
                 }
                 
-                NavigationLink(destination: AddRoutineSplitView()) {
-                    ConfirmButtonTextView(title: "Start")
+                NavigationLink(destination: AddRoutineSplitView(onNext: { print("hi") })) {
+                    ConfirmTextButton(title: "Start")
                 }
             }
         }
