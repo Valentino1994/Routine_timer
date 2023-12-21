@@ -16,24 +16,32 @@ struct FirstView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Routine")
+                            .font(.system(size: 55, weight: .semibold, design: .default))
                         Text("Timer")
+                            .font(.system(size: 55, weight: .semibold, design: .default))
                     }
+                    .padding(.leading, 28)
                     Spacer()
                 }
                 
                 Image("FirstViewImage")
                     .resizable()
                     .frame(width: 300, height: 300)
+                    .padding(.bottom, 30)
                 
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Make your workout")
+                            .font(.system(size: 30, weight: .semibold, design: .default))
                         Text("most efficiently")
+                            .font(.system(size: 30, weight: .semibold, design: .default))
                     }
+                    .padding(.leading, 28)
+                    .padding(.bottom, 30)
                     Spacer()
                 }
                 
-                NavigationLink(destination: StatisticsView()) {
+                NavigationLink(destination: AddRoutineSplitView()) {
                     ConfirmButtonTextView(title: "Start")
                 }
             }
