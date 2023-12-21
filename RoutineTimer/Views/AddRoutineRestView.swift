@@ -23,9 +23,12 @@ struct AddRoutineRestView: View {
                 .padding(.leading, 28)
                 Spacer()
             }
+            .padding(.top, 50)
+            .padding(.bottom, 40)
+            
             
             NavigationLink(destination: MainView()) {
-                ConfirmTextButton(title: "Save")
+                ConfirmTextButton(title: "Confirm")
             }
             .padding()
         }

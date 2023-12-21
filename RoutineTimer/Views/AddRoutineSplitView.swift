@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddRoutineSplitView: View {
-    @State var step = 1
+    @State var step = 0
     @State var input = ""
     var onNext: () -> Void
     @State var selectedCircleId = -1;
@@ -16,7 +16,6 @@ struct AddRoutineSplitView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 HStack {
                     VStack(alignment: .leading) {
                         Text("How many")
@@ -30,7 +29,6 @@ struct AddRoutineSplitView: View {
                 .padding(.top, 50)
                 .padding(.bottom, 40)
                 
-                // Button Group
                 VStack {
                     HStack {
                         CircleButton(split: 0, selectedCircleId: $selectedCircleId)
@@ -60,7 +58,7 @@ struct AddRoutineSplitView: View {
         }
         .navigationBarBackButtonHidden(true)
         .overlay(
-            CustomStatusBar(step: 0)
+            CustomStatusBar(step: step)
                 .edgesIgnoringSafeArea(.top)
                 .offset(y: -320)
         )
