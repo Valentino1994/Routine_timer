@@ -11,6 +11,8 @@
 		22F345972B3312A10052CC89 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F345962B3312A10052CC89 /* Split.swift */; };
 		22F345992B33131D0052CC89 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F345982B33131D0052CC89 /* Exercise.swift */; };
 		22F3459B2B33145A0052CC89 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3459A2B33145A0052CC89 /* ExerciseType.swift */; };
+		5571D60F2B33B5FF0013E5D7 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D60E2B33B5FF0013E5D7 /* FirstView.swift */; };
+		5571D6112B33B6370013E5D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D6102B33B6370013E5D7 /* MainView.swift */; };
 		55B361552B313BC90034B29C /* RoutineTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361542B313BC90034B29C /* RoutineTimerApp.swift */; };
 		55B361572B313BC90034B29C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361562B313BC90034B29C /* ContentView.swift */; };
 		55B361592B313BC90034B29C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361582B313BC90034B29C /* Item.swift */; };
@@ -24,6 +26,9 @@
 		22F345962B3312A10052CC89 /* Split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Split.swift; sourceTree = "<group>"; };
 		22F345982B33131D0052CC89 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		22F3459A2B33145A0052CC89 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
+		5571D60E2B33B5FF0013E5D7 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		5571D6102B33B6370013E5D7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5571D6122B33B9C80013E5D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		55B361512B313BC90034B29C /* RoutineTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutineTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B361542B313BC90034B29C /* RoutineTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTimerApp.swift; sourceTree = "<group>"; };
 		55B361562B313BC90034B29C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +60,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5571D60D2B33B5F20013E5D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5571D60E2B33B5FF0013E5D7 /* FirstView.swift */,
+				5571D6102B33B6370013E5D7 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		55B361482B313BC90034B29C = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +88,8 @@
 		55B361532B313BC90034B29C /* RoutineTimer */ = {
 			isa = PBXGroup;
 			children = (
+				5571D6122B33B9C80013E5D7 /* Info.plist */,
+				5571D60D2B33B5F20013E5D7 /* Views */,
 				22F345932B33115D0052CC89 /* Model */,
 				55B361542B313BC90034B29C /* RoutineTimerApp.swift */,
 				55B361562B313BC90034B29C /* ContentView.swift */,
@@ -165,10 +181,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B361572B313BC90034B29C /* ContentView.swift in Sources */,
+				5571D6112B33B6370013E5D7 /* MainView.swift in Sources */,
 				22F3459B2B33145A0052CC89 /* ExerciseType.swift in Sources */,
 				55B361592B313BC90034B29C /* Item.swift in Sources */,
 				22F345952B33116B0052CC89 /* Routine.swift in Sources */,
 				55B361552B313BC90034B29C /* RoutineTimerApp.swift in Sources */,
+				5571D60F2B33B5FF0013E5D7 /* FirstView.swift in Sources */,
 				22F345972B3312A10052CC89 /* Split.swift in Sources */,
 				22F345992B33131D0052CC89 /* Exercise.swift in Sources */,
 			);
@@ -304,9 +322,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RoutineTimer/Preview Content\"";
-				DEVELOPMENT_TEAM = JASCMY8XL7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoutineTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -333,9 +352,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RoutineTimer/Preview Content\"";
-				DEVELOPMENT_TEAM = JASCMY8XL7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoutineTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

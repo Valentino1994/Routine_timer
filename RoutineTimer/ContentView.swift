@@ -9,11 +9,14 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var routine: [Routine]
 
     var body: some View {
-        Text("HI")
+        if (routine.count == 0) {
+            FirstView()
+        } else {
+            MainView()
+        }
     }
 }
 
