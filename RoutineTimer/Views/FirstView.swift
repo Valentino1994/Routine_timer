@@ -8,20 +8,39 @@
 import SwiftUI
 
 struct FirstView: View {
+    @Binding var isPopupVisible: Bool
+        
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Text("Routine")
-                Text("Timer")
+        NavigationView {
+            VStack {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Routine")
+                        Text("Timer")
+                    }
+                    Spacer()
+                }
+                
+                Image("FirstViewImage")
+                    .resizable()
+                    .frame(width: 300, height: 300)
+                
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Make your workout")
+                        Text("most efficiently")
+                    }
+                    Spacer()
+                }
+                
+                NavigationLink(destination: StatisticsView()) {
+                    ConfirmButtonTextView(title: "Start")
+                }
             }
-            Image("FirstViewImage")
-                .resizable()
-                .frame(width: 200, height: 200)
-                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
         }
     }
 }
 
 #Preview {
-    FirstView()
+    FirstView(isPopupVisible: .constant(true))
 }
