@@ -31,25 +31,25 @@ struct AddRoutineSplitView: View {
                 
                 VStack {
                     HStack {
-                        CircleButton(split: 0, selectedCircleId: $selectedCircleId)
+                        CircleButton(circleId: 0, isSplit: true, selectedCircleId: $selectedCircleId)
                         Spacer()
-                        CircleButton(split: 1, selectedCircleId: $selectedCircleId)
+                        CircleButton(circleId: 2, isSplit: true, selectedCircleId: $selectedCircleId)
                         Spacer()
-                        CircleButton(split: 2, selectedCircleId: $selectedCircleId)
+                        CircleButton(circleId: 3, isSplit: true, selectedCircleId: $selectedCircleId)
                     }
                     
                     HStack {
-                        CircleButton(split: 3, selectedCircleId: $selectedCircleId)
+                        CircleButton(circleId: 4, isSplit: true, selectedCircleId: $selectedCircleId)
                         Spacer()
-                        CircleButton(split: 4, selectedCircleId: $selectedCircleId)
+                        CircleButton(circleId: 5, isSplit: true, selectedCircleId: $selectedCircleId)
                         Spacer()
-                        CircleButton(split: 5, selectedCircleId: $selectedCircleId)
+                        CircleButton(circleId: 6, isSplit: true, selectedCircleId: $selectedCircleId)
                     }
                     .padding(.top, 18)
                 }
                 .padding(.horizontal, 25)
 
-                NavigationLink(destination: AddRoutineRestView(input: $input, onSave: { print("save") })) {
+                NavigationLink(destination: AddRoutineRestView(input: $input, step: $step)) {
                     ConfirmTextButton(title: "Next")
                 }
                 .padding(.top, 80)
@@ -58,7 +58,7 @@ struct AddRoutineSplitView: View {
         }
         .navigationBarBackButtonHidden(true)
         .overlay(
-            CustomStatusBar(step: step)
+            CustomStatusBar(step: $step)
                 .edgesIgnoringSafeArea(.top)
                 .offset(y: -320)
         )

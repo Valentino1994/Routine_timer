@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct CircleButton: View {
-    var split: Int
+    var circleId: Int
+    var isSplit: Bool
     @Binding var selectedCircleId: Int
     
     var body: some View {
         ZStack() {
-            if (selectedCircleId != split) {
+            if (selectedCircleId != circleId) {
                 Circle()
                     .stroke(style: StrokeStyle(lineWidth: 2, dash: [5]))
                     .frame(width: 100, height: 100)
                     .foregroundColor(.white)
                     .padding()
                     .overlay(
-                        Text(String(split))
-                            .font(Font.custom("SF Pro Text", size: 35).weight(.semibold))
-                            .lineSpacing(21)
+                        Text(isSplit ? String(circleId): restDays[circleId])
+                            .font(Font.custom(
+                                "SF Pro Text",
+                                size: checkCircleText(isSplit: isSplit, circleId: circleId)
+                            ).weight(.semibold))
                             .foregroundColor(.white)
                     )
             } else {
@@ -32,16 +35,43 @@ struct CircleButton: View {
                     .foregroundColor(Color(red: 0.65, green: 0.80, blue: 0.28))
                     .padding()
                     .overlay(
-                        Text(String(split))
-                            .font(Font.custom("SF Pro Text", size: 35).weight(.semibold))
-                            .lineSpacing(21)
+                        Text(isSplit ? String(circleId): restDays[circleId])
+                            .font(Font.custom(
+                                "SF Pro Text",
+                                size: checkCircleText(isSplit: isSplit, circleId: circleId)
+                            ).weight(.semibold))
                             .foregroundColor(.white)
                     )
             }
         }
         .frame(width: 100, height: 100)
         .onTapGesture {
-            selectedCircleId = split
+            selectedCircleId = circleId
+        }
+    }
+    
+    let restDays: [String] = [
+        "Every\nOther",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+    ]
+}
+
+extension CircleButton {
+    func checkCircleText(isSplit: Bool, circleId: Int) -> CGFloat {
+        if isSplit {
+            return 30
+        } else {
+            if circleId == 0 {
+                return 20
+            } else {
+                return 25
+            }
         }
     }
 }
