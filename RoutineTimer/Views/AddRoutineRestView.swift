@@ -10,6 +10,7 @@ import SwiftUI
 struct AddRoutineRestView: View {
     @Binding var input: String
     @Binding var step: Int
+    @Binding var isPopupVisible: Bool
     @State var selectedCircleId = -1;
     
     var body: some View {
@@ -56,12 +57,14 @@ struct AddRoutineRestView: View {
                 }
                 .padding(.top, 18)
             }
-            .padding(.horizontal, 25)
+            .padding(.horizontal, 30)
             
-            NavigationLink(destination: MainView()) {
+            Button(action: {
+                isPopupVisible = false
+            }) {
                 ConfirmTextButton(title: "Confirm")
             }
-            .padding()
+            .padding(.top, 60)
         }
         .onAppear() {
             step = 1
@@ -73,5 +76,5 @@ struct AddRoutineRestView: View {
 }
 
 #Preview {
-    AddRoutineRestView(input: .constant("hi"), step: .constant(1))
+    AddRoutineRestView(input: .constant("hi"), step: .constant(1), isPopupVisible: .constant(true))
 }

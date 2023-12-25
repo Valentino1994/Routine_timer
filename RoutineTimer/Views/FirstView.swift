@@ -42,7 +42,7 @@ struct FirstView: View {
                     Spacer()
                 }
                 
-                NavigationLink(destination: AddRoutineSplitView(onNext: { print("hi") })) {
+                NavigationLink(destination: AddRoutineSplitView(isPopupVisible: $isPopupVisible)) {
                     ConfirmTextButton(title: "Start")
                 }
             }

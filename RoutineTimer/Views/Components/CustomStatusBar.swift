@@ -24,7 +24,7 @@ struct CustomStatusBar: View {
                 .background(.black)
                 .cornerRadius(30)
                 .offset(x: calculateOffset(), y: 0)
-                .animation(.easeInOut(duration: 0.5)) 
+                .animation(.easeInOut(duration: 0.5))
         }
         .frame(width: 330, height: 10)
     }
