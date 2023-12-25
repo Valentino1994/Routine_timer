@@ -12,7 +12,7 @@ import SwiftData
 struct RoutineTimerApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Routine.self, Split.self, Exercise.self
+            Routine.self, Split.self, Exercise.self, ExerciseType.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

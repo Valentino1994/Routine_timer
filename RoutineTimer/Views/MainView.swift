@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainView: View {
+    @Query(sort: \Routine.createdAt, order: .forward)
+    var routines: [Routine]
+    
     var body: some View {
-        Text("Main View")
+        List {
+            ForEach(routines.last?.splits ?? [], id: \.self) { split in
+                Text(split.splitId.uuidString)
+            }
+        }
     }
 }
 

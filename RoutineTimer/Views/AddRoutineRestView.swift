@@ -12,6 +12,7 @@ struct AddRoutineRestView: View {
     @Binding var step: Int
     @Binding var isPopupVisible: Bool
     @State var selectedRestDays: [Int] = []
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         VStack {
@@ -60,6 +61,7 @@ struct AddRoutineRestView: View {
             .padding(.horizontal, 30)
             
             Button(action: {
+                SaveRoutine(selectedRestDays: selectedRestDays, selectedSplitId: selectedSplitId)
                 isPopupVisible = false
             }) {
                 ConfirmTextButton(title: "Confirm")
@@ -72,6 +74,36 @@ struct AddRoutineRestView: View {
         .onDisappear {
             step = 0
         }
+    }
+}
+
+extension AddRoutineRestView {
+    func SaveRoutine(selectedRestDays: [Int], selectedSplitId: Int) {
+        // Generate Routine
+        let routineId = UUID()
+        let restDaysString = selectedRestDays.map { String($0) }.joined(separator: " ")
+        let routine = Routine(routineId: routineId, restDays: restDaysString, createdAt: Date(), updatedAt: Date())
+        
+        // Generate Splits
+        var splits: [Split] = []
+        if (selectedSplitId == 0) {
+            let split = Split(splitId: UUID(), routineId: routineId, isDone: false, order: 0, createdAt: Date(), updatedAt: Date())
+            splits.append(split)
+        } else {
+            for _ in 0..<selectedSplitId {
+                let split = Split(splitId: UUID(), routineId: routineId, isDone: false, order: 0, createdAt: Date(), updatedAt: Date())
+                splits.append(split)
+            }
+        }
+        
+        // Save splits
+        for split in splits {
+            modelContext.insert(split)
+        }
+        
+        // Insert splits to routine
+        routine.splits = splits
+        modelContext.insert(routine)
     }
 }
 

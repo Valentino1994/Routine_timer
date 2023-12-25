@@ -17,7 +17,7 @@ final class Split {
     @Attribute(originalName: "created_at") var createdAt: Date
     @Attribute(originalName: "updated_at") var updatedAt: Date
     
-    var exercises: [Exercise]? = []
+    var exercises: [Exercise]? = [Exercise]()
     
     init(splitId: UUID, routineId: UUID, isDone: Bool, order: Int, createdAt: Date, updatedAt: Date) {
         self.splitId = splitId

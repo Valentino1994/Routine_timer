@@ -34,7 +34,7 @@ struct RestCircleButton: View {
                         Text(restDays[circleId])
                             .font(Font.custom(
                                 "SF Pro Text",
-                                size: (circleId == 0 ? 25 : 30)
+                                size: (circleId == 0 ? 20 : 30)
                             ).weight(.semibold))
                             .foregroundColor(.white)
                     )
@@ -48,7 +48,7 @@ struct RestCircleButton: View {
                         Text(restDays[circleId])
                             .font(Font.custom(
                                 "SF Pro Text",
-                                size: (circleId == 0 ? 25 : 30)
+                                size: (circleId == 0 ? 20 : 30)
                             ).weight(.semibold))
                             .foregroundColor(.white)
                     )
