@@ -9,9 +9,8 @@ import SwiftUI
 
 struct AddRoutineSplitView: View {
     @State var step = 0
-    @State var input = ""
     @Binding var isPopupVisible: Bool
-    @State var selectedCircleId = -1;
+    @State var selectedSplitId = -1;
     
     var body: some View {
         NavigationView {
@@ -31,29 +30,35 @@ struct AddRoutineSplitView: View {
                 
                 VStack {
                     HStack {
-                        CircleButton(circleId: 0, isSplit: true, selectedCircleId: $selectedCircleId)
+                        SplitCircleButton(circleId: 0, selectedSplitId: $selectedSplitId)
                         Spacer()
-                        CircleButton(circleId: 2, isSplit: true, selectedCircleId: $selectedCircleId)
+                        SplitCircleButton(circleId: 2, selectedSplitId: $selectedSplitId)
                         Spacer()
-                        CircleButton(circleId: 3, isSplit: true, selectedCircleId: $selectedCircleId)
+                        SplitCircleButton(circleId: 3, selectedSplitId: $selectedSplitId)
                     }
                     
                     HStack {
-                        CircleButton(circleId: 4, isSplit: true, selectedCircleId: $selectedCircleId)
+                        SplitCircleButton(circleId: 4, selectedSplitId: $selectedSplitId)
                         Spacer()
-                        CircleButton(circleId: 5, isSplit: true, selectedCircleId: $selectedCircleId)
+                        SplitCircleButton(circleId: 5, selectedSplitId: $selectedSplitId)
                         Spacer()
-                        CircleButton(circleId: 6, isSplit: true, selectedCircleId: $selectedCircleId)
+                        SplitCircleButton(circleId: 6, selectedSplitId: $selectedSplitId)
                     }
                     .padding(.top, 18)
                 }
                 .padding(.horizontal, 25)
                 
-                NavigationLink(destination: AddRoutineRestView(input: $input, step: $step, isPopupVisible: $isPopupVisible)) {
+                NavigationLink(
+                    destination: 
+                        AddRoutineRestView(selectedSplitId: $selectedSplitId,
+                                           step: $step,
+                                           isPopupVisible: $isPopupVisible
+                                          )
+                ) {
                     ConfirmTextButton(title: "Next")
                 }
                 .padding(.top, 80)
-                .opacity(selectedCircleId != -1 ? 1.0 : 0.0)
+                .opacity(selectedSplitId != -1 ? 1.0 : 0.0)
             }
             .padding(.bottom, 50)
         }

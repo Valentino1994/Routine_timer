@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct AddRoutineRestView: View {
-    @Binding var input: String
+    @Binding var selectedSplitId: Int
     @Binding var step: Int
     @Binding var isPopupVisible: Bool
-    @State var selectedCircleId = -1;
+    @State var selectedRestDays: [Int] = []
     
     var body: some View {
         VStack {
@@ -30,26 +30,26 @@ struct AddRoutineRestView: View {
             
             VStack {
                 HStack {
-                    CircleButton(circleId: 0, isSplit: false, selectedCircleId: $selectedCircleId)
+                    RestCircleButton(circleId: 0, selectedRestDays: $selectedRestDays)
                     Spacer()
-                    CircleButton(circleId: 1, isSplit: false, selectedCircleId: $selectedCircleId)
+                    RestCircleButton(circleId: 1, selectedRestDays: $selectedRestDays)
                     Spacer()
-                    CircleButton(circleId: 2, isSplit: false, selectedCircleId: $selectedCircleId)
+                    RestCircleButton(circleId: 2, selectedRestDays: $selectedRestDays)
                 }
                 
                 HStack {
-                    CircleButton(circleId: 3, isSplit: false, selectedCircleId: $selectedCircleId)
+                    RestCircleButton(circleId: 3, selectedRestDays: $selectedRestDays)
                     Spacer()
-                    CircleButton(circleId: 4, isSplit: false, selectedCircleId: $selectedCircleId)
+                    RestCircleButton(circleId: 4, selectedRestDays: $selectedRestDays)
                     Spacer()
-                    CircleButton(circleId: 5, isSplit: false, selectedCircleId: $selectedCircleId)
+                    RestCircleButton(circleId: 5, selectedRestDays: $selectedRestDays)
                 }
                 .padding(.top, 18)
                 
                 HStack {
-                    CircleButton(circleId: 6, isSplit: false, selectedCircleId: $selectedCircleId)
+                    RestCircleButton(circleId: 6, selectedRestDays: $selectedRestDays)
                     Spacer()
-                    CircleButton(circleId: 7, isSplit: false, selectedCircleId: $selectedCircleId)
+                    RestCircleButton(circleId: 7, selectedRestDays: $selectedRestDays)
                     Spacer()
                     Circle()
                         .frame(width: 100, height: 100)
@@ -76,5 +76,5 @@ struct AddRoutineRestView: View {
 }
 
 #Preview {
-    AddRoutineRestView(input: .constant("hi"), step: .constant(1), isPopupVisible: .constant(true))
+    AddRoutineRestView(selectedSplitId: .constant(1), step: .constant(1), isPopupVisible: .constant(true))
 }
