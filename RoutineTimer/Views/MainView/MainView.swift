@@ -14,27 +14,23 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            Button("Test") {
-                let routine = routines.first
-                routine?.startDate = Date()
-            }
-            .opacity(isFirst(routines: routines) ? 1.0: 0.0)
-            
             RoutineTitleView(isFirst: isFirst(routines: routines))
             
             RoutineView(isFirst: isFirst(routines: routines))
             
             ExerciseTagView(isFirst: isFirst(routines: routines))
             
+            Spacer()
+            
             ExerciseListView(isFirst: isFirst(routines: routines))
+            
+            Spacer()
         }
         .padding(.top, 20)
     }
 }
 
 extension MainView {
-    
-    
     func isFirst(routines: [Routine]) -> Bool {
         let routine = routines.first
         let routineStartDate = routine?.startDate

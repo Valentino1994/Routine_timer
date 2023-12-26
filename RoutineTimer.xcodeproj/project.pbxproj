@@ -92,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				553A861E2B3ABB0E0081D42A /* Components */,
+				5571D6102B33B6370013E5D7 /* MainView.swift */,
 				553A861C2B3ABA4E0081D42A /* RoutineTitleView.swift */,
 				553A861F2B3ABC960081D42A /* RoutineView.swift */,
 				553A86252B3ABF0A0081D42A /* ExerciseTagView.swift */,
@@ -109,14 +110,21 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		5571D60D2B33B5F20013E5D7 /* Views */ = {
+		553A86292B3AC27C0081D42A /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
 				5571D6142B33DC060013E5D7 /* Components */,
 				5571D60E2B33B5FF0013E5D7 /* FirstView.swift */,
 				5571D61B2B33FBC90013E5D7 /* AddRoutineSplitView.swift */,
 				5571D61D2B33FBDB0013E5D7 /* AddRoutineRestView.swift */,
-				5571D6102B33B6370013E5D7 /* MainView.swift */,
+			);
+			path = FirstView;
+			sourceTree = "<group>";
+		};
+		5571D60D2B33B5F20013E5D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				553A86292B3AC27C0081D42A /* FirstView */,
 				553A861B2B3ABA390081D42A /* MainView */,
 				5571D6152B33DD7B0013E5D7 /* StatisticsView.swift */,
 				5571D6172B33DD950013E5D7 /* SettingsView.swift */,

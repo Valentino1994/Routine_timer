@@ -24,7 +24,6 @@ struct ExerciseTagView: View {
                 .frame(width: 35, height: 35)
         }
         .padding(.horizontal, 20)
-        .padding(.bottom, 15)
         .opacity(isFirst ? 0.0 : 1.0)
     }
 }
