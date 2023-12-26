@@ -12,6 +12,8 @@ import SwiftData
 final class Routine {
     @Attribute(.unique, originalName: "routine_id") var routineId: UUID
     @Attribute(originalName: "rest_days") var restDays: String
+    @Attribute(originalName: "start_date") var startDate: Date?
+    @Attribute(originalName: "end_date") var endDate: Date?
     @Attribute(originalName: "created_at") var createdAt: Date
     @Attribute(originalName: "updated_at") var updatedAt: Date
     

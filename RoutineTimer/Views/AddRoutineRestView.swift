@@ -87,11 +87,11 @@ extension AddRoutineRestView {
         // Generate Splits
         var splits: [Split] = []
         if (selectedSplitId == 0) {
-            let split = Split(splitId: UUID(), routineId: routineId, isDone: false, order: 0, createdAt: Date(), updatedAt: Date())
+            let split = Split(splitId: UUID(), routineId: routineId, isDone: false, createdAt: Date(), updatedAt: Date())
             splits.append(split)
         } else {
             for _ in 0..<selectedSplitId {
-                let split = Split(splitId: UUID(), routineId: routineId, isDone: false, order: 0, createdAt: Date(), updatedAt: Date())
+                let split = Split(splitId: UUID(), routineId: routineId, isDone: false, createdAt: Date(), updatedAt: Date())
                 splits.append(split)
             }
         }

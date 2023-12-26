@@ -12,6 +12,12 @@
 		22F345992B33131D0052CC89 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F345982B33131D0052CC89 /* Exercise.swift */; };
 		22F3459B2B33145A0052CC89 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3459A2B33145A0052CC89 /* ExerciseType.swift */; };
 		553A86162B3964970081D42A /* RestCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A86152B3964970081D42A /* RestCircleButton.swift */; };
+		553A861D2B3ABA4E0081D42A /* RoutineTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A861C2B3ABA4E0081D42A /* RoutineTitleView.swift */; };
+		553A86202B3ABC960081D42A /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A861F2B3ABC960081D42A /* RoutineView.swift */; };
+		553A86222B3ABDFC0081D42A /* RoutineBoxFirstComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A86212B3ABDFC0081D42A /* RoutineBoxFirstComponent.swift */; };
+		553A86242B3ABE150081D42A /* RoutineBoxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A86232B3ABE150081D42A /* RoutineBoxComponent.swift */; };
+		553A86262B3ABF0A0081D42A /* ExerciseTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A86252B3ABF0A0081D42A /* ExerciseTagView.swift */; };
+		553A86282B3AC1220081D42A /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553A86272B3AC1220081D42A /* ExerciseListView.swift */; };
 		5571D60F2B33B5FF0013E5D7 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D60E2B33B5FF0013E5D7 /* FirstView.swift */; };
 		5571D6112B33B6370013E5D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D6102B33B6370013E5D7 /* MainView.swift */; };
 		5571D6162B33DD7B0013E5D7 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D6152B33DD7B0013E5D7 /* StatisticsView.swift */; };
@@ -35,6 +41,12 @@
 		22F345982B33131D0052CC89 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		22F3459A2B33145A0052CC89 /* ExerciseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		553A86152B3964970081D42A /* RestCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestCircleButton.swift; sourceTree = "<group>"; };
+		553A861C2B3ABA4E0081D42A /* RoutineTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTitleView.swift; sourceTree = "<group>"; };
+		553A861F2B3ABC960081D42A /* RoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
+		553A86212B3ABDFC0081D42A /* RoutineBoxFirstComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineBoxFirstComponent.swift; sourceTree = "<group>"; };
+		553A86232B3ABE150081D42A /* RoutineBoxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineBoxComponent.swift; sourceTree = "<group>"; };
+		553A86252B3ABF0A0081D42A /* ExerciseTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTagView.swift; sourceTree = "<group>"; };
+		553A86272B3AC1220081D42A /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
 		5571D60E2B33B5FF0013E5D7 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		5571D6102B33B6370013E5D7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5571D6122B33B9C80013E5D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +88,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		553A861B2B3ABA390081D42A /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				553A861E2B3ABB0E0081D42A /* Components */,
+				553A861C2B3ABA4E0081D42A /* RoutineTitleView.swift */,
+				553A861F2B3ABC960081D42A /* RoutineView.swift */,
+				553A86252B3ABF0A0081D42A /* ExerciseTagView.swift */,
+				553A86272B3AC1220081D42A /* ExerciseListView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		553A861E2B3ABB0E0081D42A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				553A86212B3ABDFC0081D42A /* RoutineBoxFirstComponent.swift */,
+				553A86232B3ABE150081D42A /* RoutineBoxComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5571D60D2B33B5F20013E5D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +117,7 @@
 				5571D61B2B33FBC90013E5D7 /* AddRoutineSplitView.swift */,
 				5571D61D2B33FBDB0013E5D7 /* AddRoutineRestView.swift */,
 				5571D6102B33B6370013E5D7 /* MainView.swift */,
+				553A861B2B3ABA390081D42A /* MainView */,
 				5571D6152B33DD7B0013E5D7 /* StatisticsView.swift */,
 				5571D6172B33DD950013E5D7 /* SettingsView.swift */,
 			);
@@ -217,18 +251,24 @@
 				5571D6162B33DD7B0013E5D7 /* StatisticsView.swift in Sources */,
 				5571D6112B33B6370013E5D7 /* MainView.swift in Sources */,
 				22F3459B2B33145A0052CC89 /* ExerciseType.swift in Sources */,
+				553A86262B3ABF0A0081D42A /* ExerciseTagView.swift in Sources */,
 				55B361592B313BC90034B29C /* Item.swift in Sources */,
+				553A86202B3ABC960081D42A /* RoutineView.swift in Sources */,
 				22F345952B33116B0052CC89 /* Routine.swift in Sources */,
 				55B361552B313BC90034B29C /* RoutineTimerApp.swift in Sources */,
 				553A86162B3964970081D42A /* RestCircleButton.swift in Sources */,
+				553A861D2B3ABA4E0081D42A /* RoutineTitleView.swift in Sources */,
+				553A86222B3ABDFC0081D42A /* RoutineBoxFirstComponent.swift in Sources */,
 				5571D60F2B33B5FF0013E5D7 /* FirstView.swift in Sources */,
 				5571D6202B3404D90013E5D7 /* CustomStatusBar.swift in Sources */,
 				5571D61A2B33EFDA0013E5D7 /* ConfirmTextButton.swift in Sources */,
 				22F345972B3312A10052CC89 /* Split.swift in Sources */,
 				22F345992B33131D0052CC89 /* Exercise.swift in Sources */,
 				5571D6182B33DD950013E5D7 /* SettingsView.swift in Sources */,
+				553A86242B3ABE150081D42A /* RoutineBoxComponent.swift in Sources */,
 				5571D61C2B33FBCA0013E5D7 /* AddRoutineSplitView.swift in Sources */,
 				5571D6242B341A860013E5D7 /* SplitCircleButton.swift in Sources */,
+				553A86282B3AC1220081D42A /* ExerciseListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,14 +10,36 @@ import SwiftData
 
 struct MainView: View {
     @Query(sort: \Routine.createdAt, order: .forward)
-    var routines: [Routine]
+    private var routines: [Routine]
     
     var body: some View {
-        List {
-            ForEach(routines.last?.splits ?? [], id: \.self) { split in
-                Text(split.splitId.uuidString)
+        VStack {
+            Button("Test") {
+                let routine = routines.first
+                routine?.startDate = Date()
             }
+            .opacity(isFirst(routines: routines) ? 1.0: 0.0)
+            
+            RoutineTitleView(isFirst: isFirst(routines: routines))
+            
+            RoutineView(isFirst: isFirst(routines: routines))
+            
+            ExerciseTagView(isFirst: isFirst(routines: routines))
+            
+            ExerciseListView(isFirst: isFirst(routines: routines))
         }
+        .padding(.top, 20)
+    }
+}
+
+extension MainView {
+    
+    
+    func isFirst(routines: [Routine]) -> Bool {
+        let routine = routines.first
+        let routineStartDate = routine?.startDate
+        
+        return routineStartDate == nil
     }
 }
 
