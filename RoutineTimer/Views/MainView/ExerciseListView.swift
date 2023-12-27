@@ -15,12 +15,7 @@ struct ExerciseListView: View {
     var isFirst: Bool
     
     var body: some View {
-        if isFirst {
-            Button("Test") {
-                let routine = routines.first
-                routine?.startDate = Date()
-            }
-        } else {
+        if !isFirst {
             List {
                 Rectangle()
                     .frame(width: 350, height: 125)

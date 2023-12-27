@@ -13,20 +13,22 @@ struct MainView: View {
     private var routines: [Routine]
     
     var body: some View {
-        VStack {
-            RoutineTitleView(isFirst: isFirst(routines: routines))
-            
-            RoutineView(isFirst: isFirst(routines: routines))
-            
-            ExerciseTagView(isFirst: isFirst(routines: routines))
-            
-            Spacer()
-            
-            ExerciseListView(isFirst: isFirst(routines: routines))
-            
-            Spacer()
+        NavigationView {
+            VStack {
+                RoutineTitleView(isFirst: isFirst(routines: routines))
+                
+                RoutineView(isFirst: isFirst(routines: routines))
+                
+                ExerciseTagView(isFirst: isFirst(routines: routines))
+                
+                Spacer()
+                
+                ExerciseListView(isFirst: isFirst(routines: routines))
+                
+                Spacer()
+            }
+            .padding(.top, 20)
         }
-        .padding(.top, 20)
     }
 }
 

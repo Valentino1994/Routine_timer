@@ -11,6 +11,7 @@ struct RoutineTitleView: View {
     var isFirst: Bool
     
     var body: some View {
+        
         HStack {
             VStack(alignment: .leading) {
                 Text(dateFormating())
@@ -27,10 +28,12 @@ struct RoutineTitleView: View {
                     .foregroundColor(.white)
             }
             Spacer()
-            Image("StartButton")
-                .opacity(isFirst ? 0.0 : 1.0)
+            Button(action: {print("HI")}) {
+                Image("StartButton")
+            }
         }
         .padding(.horizontal, 20)
+        .opacity(isFirst ? 0.0 : 1.0)
     }
 }
 

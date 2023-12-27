@@ -59,11 +59,16 @@ struct RestCircleButton: View {
             if circleId == 0 {
                 selectedRestDays = [0]
             } else {
-                selectedRestDays.removeAll { $0 == 0 }
                 if selectedRestDays.contains(circleId) {
                     selectedRestDays.removeAll { $0 == circleId }
                 } else {
                     selectedRestDays.append(circleId)
+                }
+                
+                if selectedRestDays.count >= 4  {
+                    selectedRestDays.removeFirst()
+                } else {
+                    selectedRestDays.removeAll { $0 == 0 }
                 }
             }
         }

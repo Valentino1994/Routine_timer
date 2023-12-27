@@ -27,6 +27,7 @@
 		5571D61E2B33FBDB0013E5D7 /* AddRoutineRestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D61D2B33FBDB0013E5D7 /* AddRoutineRestView.swift */; };
 		5571D6202B3404D90013E5D7 /* CustomStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D61F2B3404D90013E5D7 /* CustomStatusBar.swift */; };
 		5571D6242B341A860013E5D7 /* SplitCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D6232B341A860013E5D7 /* SplitCircleButton.swift */; };
+		5596E5DC2B3BF5B200FEE72F /* CancelTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596E5DB2B3BF5B200FEE72F /* CancelTextButton.swift */; };
 		55B361552B313BC90034B29C /* RoutineTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361542B313BC90034B29C /* RoutineTimerApp.swift */; };
 		55B361572B313BC90034B29C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361562B313BC90034B29C /* ContentView.swift */; };
 		55B361592B313BC90034B29C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361582B313BC90034B29C /* Item.swift */; };
@@ -57,6 +58,7 @@
 		5571D61D2B33FBDB0013E5D7 /* AddRoutineRestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineRestView.swift; sourceTree = "<group>"; };
 		5571D61F2B3404D90013E5D7 /* CustomStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStatusBar.swift; sourceTree = "<group>"; };
 		5571D6232B341A860013E5D7 /* SplitCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCircleButton.swift; sourceTree = "<group>"; };
+		5596E5DB2B3BF5B200FEE72F /* CancelTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTextButton.swift; sourceTree = "<group>"; };
 		55B361512B313BC90034B29C /* RoutineTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutineTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B361542B313BC90034B29C /* RoutineTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTimerApp.swift; sourceTree = "<group>"; };
 		55B361562B313BC90034B29C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				5571D6192B33EFDA0013E5D7 /* ConfirmTextButton.swift */,
+				5596E5DB2B3BF5B200FEE72F /* CancelTextButton.swift */,
 				5571D61F2B3404D90013E5D7 /* CustomStatusBar.swift */,
 				5571D6232B341A860013E5D7 /* SplitCircleButton.swift */,
 				553A86152B3964970081D42A /* RestCircleButton.swift */,
@@ -270,6 +273,7 @@
 				5571D60F2B33B5FF0013E5D7 /* FirstView.swift in Sources */,
 				5571D6202B3404D90013E5D7 /* CustomStatusBar.swift in Sources */,
 				5571D61A2B33EFDA0013E5D7 /* ConfirmTextButton.swift in Sources */,
+				5596E5DC2B3BF5B200FEE72F /* CancelTextButton.swift in Sources */,
 				22F345972B3312A10052CC89 /* Split.swift in Sources */,
 				22F345992B33131D0052CC89 /* Exercise.swift in Sources */,
 				5571D6182B33DD950013E5D7 /* SettingsView.swift in Sources */,

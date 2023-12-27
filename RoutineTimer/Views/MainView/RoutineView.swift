@@ -11,11 +11,12 @@ struct RoutineView: View {
     var isFirst: Bool
     var body: some View {
         HStack {
-            Image("LeftArrow")
-                .resizable()
-                .frame(width: 15, height: 30)
-                .padding(.horizontal, 10)
-                .opacity(isFirst ? 0.0 : 1.0)
+            if !isFirst {
+                Image("LeftArrow")
+                    .resizable()
+                    .frame(width: 15, height: 30)
+                    .padding(.horizontal, 10)
+            }
             
             Spacer()
             
@@ -27,13 +28,15 @@ struct RoutineView: View {
             
             Spacer()
             
-            Image("RightArrow")
-                .resizable()
-                .frame(width: 15, height: 30)
-                .padding(.horizontal, 10)
-                .opacity(isFirst ? 0.0 : 1.0)
+            if !isFirst {
+                Image("RightArrow")
+                    .resizable()
+                    .frame(width: 15, height: 30)
+                    .padding(.horizontal, 10)
+            }
         }
         .padding(.vertical, 15)
+        .padding(.horizontal, 15)
     }
 }
 

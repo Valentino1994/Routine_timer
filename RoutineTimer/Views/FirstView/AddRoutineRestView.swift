@@ -22,12 +22,15 @@ struct AddRoutineRestView: View {
                         .font(.system(size: 32, weight: .semibold, design: .default))
                     Text("rest day")
                         .font(.system(size: 32, weight: .semibold, design: .default))
+                    Text("A rest shouldn't be longer than 3 days")
+                        .font(.system(size: 16, weight: .semibold, design: .default))
+                        .padding(.top, 1)
                 }
                 .padding(.leading, 28)
                 Spacer()
             }
             .padding(.top, 50)
-            .padding(.bottom, 40)
+            .padding(.bottom, 30)
             
             VStack {
                 HStack {
@@ -82,7 +85,7 @@ extension AddRoutineRestView {
         // Generate Routine
         let routineId = UUID()
         let restDaysString = selectedRestDays.map { String($0) }.joined(separator: " ")
-        let routine = Routine(routineId: routineId, restDays: restDaysString, createdAt: Date(), updatedAt: Date())
+        let routine = Routine(routineId: routineId, split: selectedSplitId, restDays: restDaysString, createdAt: Date(), updatedAt: Date())
         
         // Generate Splits
         var splits: [Split] = []

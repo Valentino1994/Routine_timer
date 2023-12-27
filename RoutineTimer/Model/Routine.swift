@@ -11,6 +11,7 @@ import SwiftData
 @Model
 final class Routine {
     @Attribute(.unique, originalName: "routine_id") var routineId: UUID
+    var split: Int
     @Attribute(originalName: "rest_days") var restDays: String
     @Attribute(originalName: "start_date") var startDate: Date?
     @Attribute(originalName: "end_date") var endDate: Date?
@@ -19,8 +20,9 @@ final class Routine {
     
     var splits: [Split]? = [Split]()
     
-    init(routineId: UUID, restDays: String, createdAt: Date, updatedAt: Date) {
+    init(routineId: UUID, split: Int, restDays: String, createdAt: Date, updatedAt: Date) {
         self.routineId = routineId
+        self.split = split
         self.restDays = restDays
         self.createdAt = createdAt
         self.updatedAt = updatedAt
