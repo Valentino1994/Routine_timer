@@ -66,7 +66,7 @@ struct AddRoutineSplitView: View {
         }
         .navigationBarBackButtonHidden(true)
         .overlay(
-            CustomStatusBar(step: $step)
+            CustomStatusBar(step: $step, type: 0)
                 .edgesIgnoringSafeArea(.top)
                 .offset(y: -320)
         )

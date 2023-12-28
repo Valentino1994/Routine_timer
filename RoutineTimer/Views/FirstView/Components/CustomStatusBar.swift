@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomStatusBar: View {
     @Binding var step: Int
+    var type: Int
     
     var body: some View {
         ZStack() {
@@ -20,7 +21,7 @@ struct CustomStatusBar: View {
                 .offset(x: 0, y: 0)
             Rectangle()
                 .foregroundColor(.clear)
-                .frame(width: 160, height: 8)
+                .frame(width: calculateWidth(), height: 8)
                 .background(.black)
                 .cornerRadius(30)
                 .offset(x: calculateOffset(), y: 0)
@@ -31,16 +32,30 @@ struct CustomStatusBar: View {
 }
 
 extension CustomStatusBar {
+    func calculateWidth() -> CGFloat {
+        switch type {
+        case 0:
+            return 160
+        default:
+            return 110
+        }
+    }
     func calculateOffset() -> CGFloat {
         switch step {
         case 0:
             return -84
-        default:
+        case 1:
             return 84
+        case 2:
+            return -109
+        case 3:
+            return 2
+        default:
+            return 109
         }
     }
 }
 
 #Preview {
-    CustomStatusBar(step: .constant(0))
+    CustomStatusBar(step: .constant(0), type: 0)
 }

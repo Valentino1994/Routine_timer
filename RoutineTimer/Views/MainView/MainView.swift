@@ -11,23 +11,25 @@ import SwiftData
 struct MainView: View {
     @Query(sort: \Routine.createdAt, order: .forward)
     private var routines: [Routine]
+    @State var isAddExerciseViewVisible: Bool = false
     
     var body: some View {
-        NavigationView {
-            VStack {
-                RoutineTitleView(isFirst: isFirst(routines: routines))
-                
-                RoutineView(isFirst: isFirst(routines: routines))
-                
-                ExerciseTagView(isFirst: isFirst(routines: routines))
-                
-                Spacer()
-                
-                ExerciseListView(isFirst: isFirst(routines: routines))
-                
-                Spacer()
-            }
-            .padding(.top, 20)
+        VStack {
+            RoutineTitleView(isFirst: isFirst(routines: routines))
+            
+            RoutineView(isFirst: isFirst(routines: routines))
+            
+            ExerciseTagView(isFirst: isFirst(routines: routines), isAddExerciseViewVisible: $isAddExerciseViewVisible)
+            
+            Spacer()
+            
+            ExerciseListView(isFirst: isFirst(routines: routines))
+            
+            Spacer()
+        }
+        .padding(.top, 20)
+        .fullScreenCover(isPresented: $isAddExerciseViewVisible) {
+            AddExerciseView(isAddExerciseViewVisible: $isAddExerciseViewVisible)
         }
     }
 }

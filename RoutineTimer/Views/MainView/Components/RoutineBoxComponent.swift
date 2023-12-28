@@ -25,7 +25,6 @@ struct RoutineBoxComponent: View {
                     )
                 .overlay(
                     VStack {
-                        Text(dateFormatingForDay(date: routines.last?.endDate ?? Date()))
                         Text(dateFormatingForMonth(date: split.splitDate ?? Date()))
                             .font(Font.custom("SF Pro Text", size: 14).weight(.semibold))
                             .foregroundColor(split.isDone ? .black : .white)

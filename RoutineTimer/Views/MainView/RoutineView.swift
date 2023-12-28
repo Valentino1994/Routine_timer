@@ -11,6 +11,7 @@ struct RoutineView: View {
     var isFirst: Bool
     var body: some View {
         HStack {
+            // TODO: 以前のものがないと隠す。
             if !isFirst {
                 Image("LeftArrow")
                     .resizable()
@@ -24,7 +25,7 @@ struct RoutineView: View {
                 RoutineBoxComponent()
             }
             
-            // TODO: 次のる
+            // TODO: 次のものがなければ作りますか？のアラート
             if !isFirst {
                 Image("RightArrow")
                     .resizable()
