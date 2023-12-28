@@ -17,17 +17,21 @@ struct RoutineBoxComponent: View {
             RoundedRectangle(cornerRadius: 10)
                 .stroke(style: StrokeStyle(lineWidth: 2))
                 .frame(height: 70)
-                .foregroundColor(split.isDone ? Color(red: 0.65, green: 0.80, blue: 0.28) : Color.white)
-//                .padding(.horizontal, 5)
+                .foregroundColor(compareWithToday(targetDate: split.splitDate ?? Date()) || split.isDone ? Color(red: 0.65, green: 0.80, blue: 0.28) : Color.white)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color(red: 0.65, green: 0.80, blue: 0.28))
+                        .opacity(split.isDone ? 1.0 : 0.0)
+                    )
                 .overlay(
                     VStack {
                         Text(dateFormatingForMonth(date: split.splitDate ?? Date()))
                             .font(Font.custom("SF Pro Text", size: 14).weight(.semibold))
-                            .foregroundColor(.white)
+                            .foregroundColor(split.isDone ? .black : .white)
                             .padding(.bottom, 1)
                         Text(dateFormatingForDay(date: split.splitDate ?? Date()))
                             .font(Font.custom("SF Pro Text", size: 20).weight(.semibold))
-                            .foregroundColor(.white)
+                            .foregroundColor(split.isDone ? .black : .white)
                     }
                 )
         }
@@ -80,6 +84,24 @@ extension RoutineBoxComponent {
         let formattedDate = dateFormatter.string(from: date)
         
         return formattedDate
+    }
+    
+    func compareWithToday(targetDate: Date) -> Bool {
+        // 今日の日付を取得
+        let currentDate = Date()
+
+        // split オブジェクトから splitDate を取得
+        let splitDate = targetDate
+
+        // 日付フォーマットを設定
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        // 今日の日付と splitDate の日付を文字列に変換
+        let currentDateString = dateFormatter.string(from: currentDate)
+        let splitDateString = dateFormatter.string(from: splitDate)
+        
+        return currentDateString == splitDateString
     }
 }
 
