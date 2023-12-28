@@ -13,7 +13,7 @@ final class Split {
     @Attribute(.unique, originalName: "split_id") var splitId: UUID
     @Attribute(originalName: "routine_id") var routineId: UUID
     @Attribute(originalName: "is_done") var isDone: Bool
-    @Attribute(originalName: "split_date") var SplitDate: Date?
+    @Attribute(originalName: "split_date") var splitDate: Date?
     @Attribute(originalName: "created_at") var createdAt: Date
     @Attribute(originalName: "updated_at") var updatedAt: Date
     

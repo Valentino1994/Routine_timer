@@ -13,13 +13,13 @@ struct RestCircleButton: View {
     
     let restDays: [String] = [
         "Every\nOther",
+        "Sun",
         "Mon",
         "Tue",
         "Wed",
         "Thu",
         "Fri",
         "Sat",
-        "Sun"
     ]
     
     var body: some View {

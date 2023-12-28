@@ -85,14 +85,14 @@ struct RoutineBoxFirstComponent: View {
             }
             
             Button(action: {
-                routines.first?.startDate = Date()
+                startRoutine()
             }) {
-                ConfirmTextButton(title: "Start")
+                ConfirmTextButton(title: "Start Routine")
             }
             .padding(.top, 10)
         }
         .fullScreenCover(isPresented: $isPopupVisible) {
-            FirstView(isPopupVisible: $isPopupVisible)
+            AddRoutineSplitView(isPopupVisible: $isPopupVisible, isEdit: true)
         }
     }
 }
@@ -100,8 +100,54 @@ struct RoutineBoxFirstComponent: View {
 extension RoutineBoxFirstComponent {
     func makeRestArray(restDaysString: String) -> [Int] {
         let stringArray = restDaysString.components(separatedBy: " ")
-        let intArray = stringArray.compactMap { Int($0) }
+        let intArray = stringArray.compactMap { Int($0) }.sorted()
         return intArray
+    }
+    func startRoutine() {
+        if let routine = routines.last {
+            if let splits = routine.splits {
+                var splitDays: Int = 0
+                var workoutDay: Date = Date()
+                let restDaysArray = routine.restDays.components(separatedBy: " ").map({ Int($0) })
+                let calendar = Calendar.current
+                
+                if (restDaysArray.first == 0) {
+                    var isRestDay: Bool = false
+                    while splitDays < splits.count {
+                        splits[splitDays].splitDate = workoutDay
+                        
+                        if let nextWorkoutDay = Calendar.current.date(byAdding: .day, value: 1, to: workoutDay) {
+                            workoutDay = nextWorkoutDay
+                        }
+                        
+                        if (!isRestDay) {
+                            splitDays += 1
+                        }
+                        isRestDay.toggle()
+                    }
+                } else {
+                    while splitDays < splits.count {
+                        let components = calendar.dateComponents([.weekday], from: workoutDay)
+                        let weekDay = components.weekday
+                        
+                        splits[splitDays].splitDate = workoutDay
+                        
+                        if (!restDaysArray.contains(weekDay)) {
+                            splitDays += 1
+                            if splitDays == splits.count {
+                                break
+                            }
+                        }
+
+                        if let nextWorkoutDay = Calendar.current.date(byAdding: .day, value: 1, to: workoutDay) {
+                            workoutDay = nextWorkoutDay
+                        }
+                    }
+                }
+                
+                routine.startDate = Date()
+            }
+        }
     }
 }
 

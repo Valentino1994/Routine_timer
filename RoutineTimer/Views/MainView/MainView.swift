@@ -34,7 +34,7 @@ struct MainView: View {
 
 extension MainView {
     func isFirst(routines: [Routine]) -> Bool {
-        let routine = routines.first
+        let routine = routines.last
         let routineStartDate = routine?.startDate
         
         return routineStartDate == nil

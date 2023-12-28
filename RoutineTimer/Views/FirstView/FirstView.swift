@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FirstView: View {
     @Binding var isPopupVisible: Bool
-        
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -42,7 +42,7 @@ struct FirstView: View {
                     Spacer()
                 }
                 
-                NavigationLink(destination: AddRoutineSplitView(isPopupVisible: $isPopupVisible)) {
+                NavigationLink(destination: AddRoutineSplitView(isPopupVisible: $isPopupVisible, isEdit: false)) {
                     ConfirmTextButton(title: "Start")
                 }
             }

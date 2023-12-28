@@ -15,10 +15,8 @@ struct RoutineView: View {
                 Image("LeftArrow")
                     .resizable()
                     .frame(width: 15, height: 30)
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 5)
             }
-            
-            Spacer()
             
             if isFirst {
                 RoutineBoxFirstComponent()
@@ -26,17 +24,14 @@ struct RoutineView: View {
                 RoutineBoxComponent()
             }
             
-            Spacer()
-            
             if !isFirst {
                 Image("RightArrow")
                     .resizable()
                     .frame(width: 15, height: 30)
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 5)
             }
         }
         .padding(.vertical, 15)
-        .padding(.horizontal, 15)
     }
 }
 

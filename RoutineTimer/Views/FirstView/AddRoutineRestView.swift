@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddRoutineRestView: View {
     @Binding var selectedSplitId: Int
     @Binding var step: Int
     @Binding var isPopupVisible: Bool
+    var isEdit: Bool
     @State var selectedRestDays: [Int] = []
     @Environment(\.modelContext) private var modelContext
+    @Query(sort: \Routine.createdAt, order: .forward)
+    private var routines: [Routine]
     
     var body: some View {
         VStack {
@@ -64,7 +68,13 @@ struct AddRoutineRestView: View {
             .padding(.horizontal, 30)
             
             Button(action: {
-                SaveRoutine(selectedRestDays: selectedRestDays, selectedSplitId: selectedSplitId)
+                if isEdit {
+                    if let lastRoutine = routines.last {
+                        EditRoutine(routine: lastRoutine, selectedRestDays: selectedRestDays, selectedSplitId: selectedSplitId)
+                    }
+                } else {
+                    SaveRoutine(selectedRestDays: selectedRestDays, selectedSplitId: selectedSplitId)
+                }
                 isPopupVisible = false
             }) {
                 ConfirmTextButton(title: "Confirm")
@@ -108,8 +118,22 @@ extension AddRoutineRestView {
         routine.splits = splits
         modelContext.insert(routine)
     }
+    
+    func EditRoutine(routine: Routine, selectedRestDays: [Int], selectedSplitId: Int) {
+        routine.split = selectedSplitId
+        let restDaysString = selectedRestDays.map { String($0) }.joined(separator: " ")
+        routine.restDays = restDaysString
+        routine.updatedAt = Date()
+        
+        if let splits = routine.splits {
+            for split in splits {
+                split.exercises = []
+                split.updatedAt = Date()
+            }
+        }
+    }
 }
 
 #Preview {
-    AddRoutineRestView(selectedSplitId: .constant(1), step: .constant(1), isPopupVisible: .constant(true))
+    AddRoutineRestView(selectedSplitId: .constant(1), step: .constant(1), isPopupVisible: .constant(true), isEdit: false)
 }

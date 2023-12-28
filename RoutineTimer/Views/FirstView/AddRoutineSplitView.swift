@@ -10,6 +10,7 @@ import SwiftUI
 struct AddRoutineSplitView: View {
     @State var step = 0
     @Binding var isPopupVisible: Bool
+    var isEdit: Bool
     @State var selectedSplitId = -1;
     
     var body: some View {
@@ -52,7 +53,8 @@ struct AddRoutineSplitView: View {
                     destination: 
                         AddRoutineRestView(selectedSplitId: $selectedSplitId,
                                            step: $step,
-                                           isPopupVisible: $isPopupVisible
+                                           isPopupVisible: $isPopupVisible,
+                                           isEdit: isEdit
                                           )
                 ) {
                     ConfirmTextButton(title: "Next")
@@ -72,5 +74,5 @@ struct AddRoutineSplitView: View {
 }
 
 #Preview {
-    AddRoutineSplitView(isPopupVisible: .constant(true))
+    AddRoutineSplitView(isPopupVisible: .constant(true), isEdit: false)
 }
