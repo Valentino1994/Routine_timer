@@ -24,6 +24,7 @@ struct RoutineView: View {
                 RoutineBoxComponent()
             }
             
+            // TODO: 次のる
             if !isFirst {
                 Image("RightArrow")
                     .resizable()

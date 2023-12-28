@@ -19,9 +19,12 @@ struct ExerciseTagView: View {
                     .frame(width: 80, height: 40)
             }
             Spacer()
-            Image(systemName: "plus.circle")
-                .resizable()
-                .frame(width: 35, height: 35)
+            NavigationLink(destination: AddExerciseView()) {
+                Image(systemName: "plus.circle")
+                    .resizable()
+                    .frame(width: 35, height: 35)
+            }
+            .accentColor(.white) 
         }
         .padding(.horizontal, 20)
         .opacity(isFirst ? 0.0 : 1.0)

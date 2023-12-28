@@ -11,7 +11,6 @@ struct RoutineTitleView: View {
     var isFirst: Bool
     
     var body: some View {
-        
         HStack {
             VStack(alignment: .leading) {
                 Text(dateFormating())

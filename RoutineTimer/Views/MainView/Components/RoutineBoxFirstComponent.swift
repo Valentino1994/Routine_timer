@@ -14,13 +14,13 @@ struct RoutineBoxFirstComponent: View {
     
     let restDays: [String] = [
         "Every\nOther",
+        "Sun",
         "Mon",
         "Tue",
         "Wed",
         "Thu",
         "Fri",
-        "Sat",
-        "Sun"
+        "Sat"
     ]
     
     @State private var isPopupVisible = false
@@ -85,7 +85,7 @@ struct RoutineBoxFirstComponent: View {
             }
             
             Button(action: {
-                startRoutine()
+                startRoutine(startDate: Date())
             }) {
                 ConfirmTextButton(title: "Start Routine")
             }
@@ -103,49 +103,58 @@ extension RoutineBoxFirstComponent {
         let intArray = stringArray.compactMap { Int($0) }.sorted()
         return intArray
     }
-    func startRoutine() {
+    
+    func startRoutine(startDate: Date) {
         if let routine = routines.last {
             if let splits = routine.splits {
                 var splitDays: Int = 0
-                var workoutDay: Date = Date()
+                var workoutDay: Date = startDate
                 let restDaysArray = routine.restDays.components(separatedBy: " ").map({ Int($0) })
                 let calendar = Calendar.current
                 
                 if (restDaysArray.first == 0) {
                     var isRestDay: Bool = false
-                    while splitDays < splits.count {
-                        splits[splitDays].splitDate = workoutDay
+                    while splitDays < splits.count + 1 {
+                        if (!isRestDay) {
+                            if (splitDays < splits.count) {
+                                splits[splitDays].splitDate = workoutDay
+                            }
+                            splitDays += 1
+                        }
+                        
+                        if splitDays == splits.count + 1 {
+                            break
+                        }
                         
                         if let nextWorkoutDay = Calendar.current.date(byAdding: .day, value: 1, to: workoutDay) {
                             workoutDay = nextWorkoutDay
                         }
                         
-                        if (!isRestDay) {
-                            splitDays += 1
-                        }
                         isRestDay.toggle()
                     }
                 } else {
-                    while splitDays < splits.count {
+                    while splitDays < splits.count + 1 {
                         let components = calendar.dateComponents([.weekday], from: workoutDay)
                         let weekDay = components.weekday
-                        
-                        splits[splitDays].splitDate = workoutDay
-                        
                         if (!restDaysArray.contains(weekDay)) {
-                            splitDays += 1
-                            if splitDays == splits.count {
-                                break
+                            if (splitDays < splits.count) {
+                                splits[splitDays].splitDate = workoutDay
                             }
+                            splitDays += 1
                         }
-
+                        
+                        if splitDays == splits.count + 1 {
+                            break
+                        }
+                        
                         if let nextWorkoutDay = Calendar.current.date(byAdding: .day, value: 1, to: workoutDay) {
                             workoutDay = nextWorkoutDay
                         }
                     }
                 }
                 
-                routine.startDate = Date()
+                routine.startDate = startDate
+                routine.nextDate = workoutDay
             }
         }
     }

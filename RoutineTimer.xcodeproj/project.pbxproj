@@ -28,6 +28,7 @@
 		5571D6202B3404D90013E5D7 /* CustomStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D61F2B3404D90013E5D7 /* CustomStatusBar.swift */; };
 		5571D6242B341A860013E5D7 /* SplitCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5571D6232B341A860013E5D7 /* SplitCircleButton.swift */; };
 		5596E5DC2B3BF5B200FEE72F /* CancelTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596E5DB2B3BF5B200FEE72F /* CancelTextButton.swift */; };
+		5596E5DE2B3D575D00FEE72F /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5596E5DD2B3D575D00FEE72F /* AddExerciseView.swift */; };
 		55B361552B313BC90034B29C /* RoutineTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361542B313BC90034B29C /* RoutineTimerApp.swift */; };
 		55B361572B313BC90034B29C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361562B313BC90034B29C /* ContentView.swift */; };
 		55B361592B313BC90034B29C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B361582B313BC90034B29C /* Item.swift */; };
@@ -59,6 +60,7 @@
 		5571D61F2B3404D90013E5D7 /* CustomStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStatusBar.swift; sourceTree = "<group>"; };
 		5571D6232B341A860013E5D7 /* SplitCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCircleButton.swift; sourceTree = "<group>"; };
 		5596E5DB2B3BF5B200FEE72F /* CancelTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelTextButton.swift; sourceTree = "<group>"; };
+		5596E5DD2B3D575D00FEE72F /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 		55B361512B313BC90034B29C /* RoutineTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoutineTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B361542B313BC90034B29C /* RoutineTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTimerApp.swift; sourceTree = "<group>"; };
 		55B361562B313BC90034B29C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				553A861F2B3ABC960081D42A /* RoutineView.swift */,
 				553A86252B3ABF0A0081D42A /* ExerciseTagView.swift */,
 				553A86272B3AC1220081D42A /* ExerciseListView.swift */,
+				5596E5DD2B3D575D00FEE72F /* AddExerciseView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				553A86162B3964970081D42A /* RestCircleButton.swift in Sources */,
 				553A861D2B3ABA4E0081D42A /* RoutineTitleView.swift in Sources */,
 				553A86222B3ABDFC0081D42A /* RoutineBoxFirstComponent.swift in Sources */,
+				5596E5DE2B3D575D00FEE72F /* AddExerciseView.swift in Sources */,
 				5571D60F2B33B5FF0013E5D7 /* FirstView.swift in Sources */,
 				5571D6202B3404D90013E5D7 /* CustomStatusBar.swift in Sources */,
 				5571D61A2B33EFDA0013E5D7 /* ConfirmTextButton.swift in Sources */,

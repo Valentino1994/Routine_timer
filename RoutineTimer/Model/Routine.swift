@@ -14,7 +14,7 @@ final class Routine {
     var split: Int
     @Attribute(originalName: "rest_days") var restDays: String
     @Attribute(originalName: "start_date") var startDate: Date?
-    @Attribute(originalName: "end_date") var endDate: Date?
+    @Attribute(originalName: "next_date") var nextDate: Date?
     @Attribute(originalName: "created_at") var createdAt: Date
     @Attribute(originalName: "updated_at") var updatedAt: Date
     
